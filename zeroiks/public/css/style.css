@@ -1,0 +1,59 @@
+
+.center-block {
+    float: none;    
+}
+
+.nav_head_down {
+    margin-top: 15px;
+}
+
+.logo_height{
+    height: 35px;
+    margin-top: -7px;
+}
+
+.rules h4 {
+    font-size: 14px;
+    position: relative;
+    left: 54px;
+}
+
+.rules p {
+    position: relative;
+    left: 54px;
+    font-size: 12px;
+}
+
+.login_btn {
+    height: 55px;
+    width: 150px;    
+}
+
+* {
+    margin: 0; 
+    padding: 0; 
+}
+
+table { 
+    border-collapse: collapse; border-spacing: 0; 
+}
+
+#board { 
+    padding: 0px; 
+    margin: 0 auto; 
+    margin-top: 25px; 
+}
+
+#board tr td { 
+    width: 80px; 
+    height: 80px; 
+    border: 1px solid #1c1c1c; 
+    font-family: Helvetica; 
+    font-size: 30px; 
+    text-align: center; 
+}
+
+#board tr td:hover { 
+    background: #e4e4e4; 
+    cursor: pointer; 
+}
