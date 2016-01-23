@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => '1729828850585087',
         'client_secret' => '8fac7fdda7f1c0513b1adce1cfd30c6e',
-        'redirect' => 'http://zeroiks:8000/public/homePage',
+        'redirect' => 'http://zeroiks.local:8000/public/auth/facebook/callback',
     ],
 
 ];

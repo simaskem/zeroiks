@@ -1,8 +1,8 @@
-@extends('layout')
-@section('content')
+@extends('master.layout')
 
-@if (1 == 1)
-    <div class="panel-body">
+@section('content')
+<div class="container">
+    <div class="row">
          <div class="center-block col-lg-8">
             <h3 class="text-center">Welcome!</h3>
             <br />
@@ -16,35 +16,8 @@
             </div>
             <br />
             <br />             
-            <button class="btn btn-lg btn-success login_btn center-block" type="submit">Login</button>
+            <a class="btn btn-lg btn-success login_btn center-block" role="button" href="auth/facebook" type="submit">Login FB</a>
          </div>
     </div>
-@endif
-
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
 </div>
-
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1729828850585087',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
-
 @endsection
