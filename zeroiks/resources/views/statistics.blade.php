@@ -1,7 +1,7 @@
-@if (1 == 0)
+@if (Auth::check())
     <div class="panel-body">
          <div class="center-block col-lg-8">
-            <table class="table table-condensed">
+            <table class="table table-condensed statistics">
                 <thead>
                     <tr class="active">
                         <th>Player</th>

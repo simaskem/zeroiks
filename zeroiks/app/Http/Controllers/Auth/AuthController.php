@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Auth;
+use Redirect;
 use Socialite;
 use Validator;
+use Session;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -30,7 +32,8 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $loginPath = '/';
+    protected $redirectPath = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -41,7 +44,8 @@ class AuthController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
-
+    
+    
     /**
      * Get a validator for an incoming registration request.
      *
@@ -53,7 +57,7 @@ class AuthController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            
         ]);
     }
 
@@ -67,13 +71,10 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'email' => $data['email'],            
         ]);
     }
-    
-    
-     protected $redirectPath = '/home';
+
  
     /**
      * Redirect the user to the Facebook authentication page.
@@ -101,10 +102,12 @@ class AuthController extends Controller
         }
  
         $authUser = $this->findOrCreateUser($user);
-
-        Auth::login($authUser, false);
         
-        return redirect()->route('home');
+        Auth::login($authUser, false);
+
+        Session::set('user', Auth::user());
+        
+        return Redirect::intended('/');
     }
  
     /**
@@ -131,5 +134,11 @@ class AuthController extends Controller
         ]);
     }
     
+    public function Logout() 
+    {
+        Auth::logout();
+        Session::flush();
+        return redirect('/');
+    }
     
 }

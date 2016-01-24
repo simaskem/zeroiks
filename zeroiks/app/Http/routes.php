@@ -11,16 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-	
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
+Route::get('logout', 'Auth\AuthController@Logout');
 
-Route::get('home', array('as' => 'home', 'uses' => function(){
-  return view('home');
-}));
-
+Route::resource('game', 'GameController');
 
 /*
 |--------------------------------------------------------------------------

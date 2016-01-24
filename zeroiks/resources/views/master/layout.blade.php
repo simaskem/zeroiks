@@ -17,6 +17,9 @@
                 <h4 id="index_title" class="nav_head_down pull-left">Tic Tac Toe</h4>          
             </div>
             <div class="nav navbar-nav navbar-right"> 
+                @if (Auth::check())
+                    <li><a href="/">Home</a></li>
+                @endif
                 @include('logout')            
             </div>
           </div>
@@ -24,6 +27,7 @@
     </div>
         @include('statistics')        
     <div class="container body-content">
+        <br />
         <br />
         <br />
         @yield('content')        
@@ -34,13 +38,19 @@
         <br />    
         <br />   
         <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />    
+        <br />  
+        <br />       
+    </div>
+    <footer class="footer">
         <hr />
-    <footer>
         <p class="text-center">
             <small>{{trans('msg.lbl_footer_msg')}}</small>
         </p>
-    </footer>
-        <script src="{{ asset('js/tictac.js') }}"></script>  
-        <script src="{{ asset('js/server.js') }}"></script> 
+    </footer>       
 </body>
 </html>
