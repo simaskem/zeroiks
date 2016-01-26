@@ -18,7 +18,9 @@
             </div>
             <div class="nav navbar-nav navbar-right"> 
                 @if (Auth::check())
-                    <li><a href="/">Home</a></li>
+                    @if(Request::path() == 'game/create')
+                        <li><a href="/">Home</a></li>
+                    @endif
                 @endif
                 @include('logout')            
             </div>

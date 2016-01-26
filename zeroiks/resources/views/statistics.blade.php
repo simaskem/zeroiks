@@ -9,19 +9,17 @@
                         <th>Won</th>
                         <th>Lost</th>
                         <th>Tied</th>
-                        <th>Last Game</th>
-                        <th>Streak</th>
+                        <th>Last Game</th>                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="success">
-                        <th>Simas</th>
+                        <th>{{ Auth::user()->name }}</th>
                         <th>66</th>
                         <th>35</th>
                         <th>25</th>
                         <th>6</th>
-                        <th>Won</th>
-                        <th>8</th>
+                        <th>Won</th>                        
                     </tr>
                 </tbody>
             </table>
