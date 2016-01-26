@@ -13,11 +13,7 @@ class Statistic extends Model {
     protected $hidden = [''];
 
     // belongs to
-    public function ref_user_id()
-    {
-            return $this->belongsTo('App\User', 'user_id');
-    }
-
+    
     // has many
 
     // date mutators

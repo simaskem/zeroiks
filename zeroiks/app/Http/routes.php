@@ -10,11 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+Route::get('login', 'Auth\AuthController@getLogin');
+
 Route::group(['middleware' => ['web']], function () {
     
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+    
 
-    Route::get('logout', 'Auth\AuthController@getLogout');
+
+    Route::get('/logout', 'Auth\AuthController@getLogout');
 
     Route::resource('game', 'GameController');
 

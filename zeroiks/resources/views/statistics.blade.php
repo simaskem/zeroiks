@@ -14,12 +14,12 @@
                 </thead>
                 <tbody>
                     <tr class="success">
-                        <th>{{ Auth::user()->name }}</th>
-                        <th>66</th>
-                        <th>35</th>
-                        <th>25</th>
-                        <th>6</th>
-                        <th>Won</th>                        
+                        <th>{{ $user->name }}</th>
+                        <th>{{ $user->ref_user_id->total_games }}</th>
+                        <th>{{ $user->ref_user_id->win }}</th>
+                        <th>{{ $user->ref_user_id->lose }}</th>
+                        <th>{{ $user->ref_user_id->tie }}</th>
+                        <th>{{ $user->ref_user_id->last_game_result }}</th>                        
                     </tr>
                 </tbody>
             </table>

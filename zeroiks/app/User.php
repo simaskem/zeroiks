@@ -26,4 +26,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['remember_token'];
+    
+    
+    public function ref_user_id()
+    {
+            return $this->hasOne('App\Statistic', 'user_id');
+    }
+    
 }

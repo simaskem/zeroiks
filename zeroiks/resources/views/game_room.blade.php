@@ -14,8 +14,7 @@
         <div id="messages">Waiting for opponent to join...</div>
     </div>
 
-    <script src="{{ asset('js/tictac.js') }}"></script>  
-    <script src="{{ asset('js/server.js') }}"></script> 
+
     </body>
     </html>
 @endsection

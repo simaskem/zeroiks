@@ -13,7 +13,7 @@
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-                <a href="#" class="pull-left navbar-brand"><img class="img-circle img-responsive logo_height" src="img/logo.png"></a>
+                <a href="#" class="pull-left navbar-brand"><img class="img-circle img-responsive logo_height" src="/img/logo.png"></a>
                 <h4 id="index_title" class="nav_head_down pull-left">Tic Tac Toe</h4>          
             </div>
             <div class="nav navbar-nav navbar-right"> 

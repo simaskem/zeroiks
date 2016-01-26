@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => array('index')]);
+        $this->middleware('auth', ['except' =>'']);
     }
 
     /**
@@ -24,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $user = user::where('id', Auth::user()->id)->first();
+        return view('welcome', compact('user'));
     }
     
   
